@@ -25,7 +25,7 @@ Jimp.read(FILENAME, (err, image) => {
             .color([
                 { apply: 'hue', params: [360.0 / COLOURS * i] }
             ])
-            .write(path.join('tmp', `frame${i}.png`))
+            .write(path.join('tmp', `frame${new String(i).padStart(new String(COLOURS).length, '0')}.png`))
     }
 
     pngFileStream('tmp/frame*.png')
